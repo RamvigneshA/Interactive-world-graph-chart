@@ -1,15 +1,14 @@
 import { Button } from "@/components/ui/button"
 import { useState } from 'react'
 import './App.css'
-import WorldMap from "./WorldMap";
+import Worldmap from "./WorldMap";
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div>
-      <Button>Click me</Button>
-      <WorldMap/>
+    <div className="container mx-auto">
+      <Worldmap/>
     </div>
   )
 }
