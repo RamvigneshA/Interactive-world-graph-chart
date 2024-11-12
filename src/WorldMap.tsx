@@ -5,6 +5,9 @@ import { ChartConfig, ChartContainer } from '@/components/ui/chart';
 import { Bar, BarChart, Legend, YAxis } from 'recharts';
 import { TrendingUp } from 'lucide-react';
 import { CartesianGrid, Line, LineChart, XAxis } from 'recharts';
+import { Moon, Sun } from "lucide-react"
+ 
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
@@ -115,21 +118,21 @@ function Worldmap() {
   };
   console.log(transformedData);
   return (
-    <div className="container mx-auto flex pt-20 ">
-      <div className='w-1/2 pb-10 pl-10 border rounded-2xl'>
+    <div className="container mx-auto  lg:flex pl-10 pr-10 ">
+      <div className=' lg:w-1/2 md:p-10 mx-auto border rounded-2xl  '>
         <WorldMap
           color=""
           richInteraction="true"
           strokeOpacity="100"
           value-suffix="people"
           size="responsive"
-          backgroundColor="lightblue"
+          // backgroundColor="lightblue"
           data={data}
           onClickFunction={clickAction}
         />
         <p className='font-bold mt-5'>"Click on a country on the map to view its population trend over time. Double-click on a region to zoom in for a more detailed view."</p>
       </div>
-      <div className='w-1/2'>
+      <div className='lg:w-1/2'>
       {transformedData?.length > 0 ? (
         <Card>
           <CardHeader>
@@ -180,12 +183,9 @@ function Worldmap() {
           <CardFooter>
             <div className="flex w-full items-start gap-2 text-sm">
               <div className="grid gap-2">
-                <div className="flex items-center gap-2 font-medium leading-none">
-                  Trending up by 5.2% this month{' '}
-                  <TrendingUp className="h-4 w-4" />
-                </div>
+               
                 <div className="flex items-center gap-2 leading-none text-muted-foreground">
-                  Showing total visitors for the last 6 months
+                  Hover the graph for interactive details
                 </div>
               </div>
             </div>
@@ -201,25 +201,4 @@ function Worldmap() {
 
 export default Worldmap;
 
-{
-  /* <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
-{transformedData?.length > 0 ?  (
-  <LineChart
-    width={800}
-    height={800}
-    data={transformedData}
-  >
-    {Object.keys(transformedData[0]).filter((k)=>k!=='year').map((name,index)=>(<Line key={name} type={'monotone'} dataKey={name}  stroke={generateRandomColor()} strokeWidth={3} />))}
- 
-        
-    <CartesianGrid strokeDasharray={'3 3'} />
-    <XAxis dataKey="year" />
-    <YAxis />
-    <Tooltip />
-    <Legend />
-  </LineChart>
-) : (
-      <p>No population data available.</p>
-    )}
-  </div> */
-}
+
