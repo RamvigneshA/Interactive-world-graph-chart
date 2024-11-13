@@ -42,9 +42,9 @@ interface CountryData {
 
 function Worldmap() {
   const [countryData, setCountryData] = useState<CountryData[]>([]);
-  const [code, setCode] = useState<string>('IN');
+  const [code, setCode] = useState<string>('SL');
   const [data, setData] = useState<{ country: string; value: string }[]>([
-    { country: 'IN', value: '' },
+    { country: 'SL', value: '' },
   ]);
 
   useEffect(() => {
@@ -130,8 +130,8 @@ function Worldmap() {
   };
 
   return (
-    <div className="container mx-auto lg:flex mb-10 justify-between pl-10 pr-10">
-      <div className="container mt-5 lg:mt-0 lg:w-1/2 md:p-5 mx-auto border rounded-2xl">
+    <div className="container mx-auto lg:flex mb-2 justify-between pl-10 pr-10">
+      <div className="container mt-5 lg:mt-0 lg:w-1/2 md:p-5 mx-auto md:border rounded-2xl">
         <WorldMap
           color=""
           richInteraction={true}
@@ -141,9 +141,9 @@ function Worldmap() {
           data={data}
           onClickFunction={clickAction}
         />
-        <p className="font-thin pl-5 pr-5  md:font-bold text-sm mt-5">
+        <p className="font-thin  md:font-bold text-sm mt-5">
           "Click on a country on the map to view its population trend over
-          time."
+          time.  <span className='font-bold'>'Double click'</span> to <span className='font-bold'>zoom"</span>
         </p>
       </div>
 
@@ -160,7 +160,7 @@ function Worldmap() {
               <ChartContainer config={chartConfig} className="container mt-10">
                 <LineChart
                   data={transformedData}
-                  margin={{ left: 12, right: 12 }}
+                  // margin={{ left: 1, right: 12 }}
                 >
                   <CartesianGrid vertical={false} />
                   <XAxis
@@ -193,7 +193,7 @@ function Worldmap() {
             <CardFooter>
               <div className="flex w-full items-start gap-2 text-sm">
                 <div className="grid gap-2">
-                  <div className="flex items-center gap-2 leading-none text-muted-foreground">
+                  <div className="flex items-center mt-5 gap-2 leading-none text-muted-foreground">
                     Hover the graph for interactive details
                   </div>
                 </div>

@@ -2,7 +2,7 @@ import { ThemeProvider } from './theme-provider';
 import './App.css';
 import Worldmap from './Worldmap';
 import { ModeToggle } from './mode-toggle';
-
+import Reset from './Reset';
 function App() {
 
   return (
@@ -12,8 +12,9 @@ function App() {
           <header className="sm:text-xl lg:text-3xl">Global Growth Graph</header>
           {/* <Switch checked={} onCheckedChange={} /> */}
           <ModeToggle/>
-        </div>
+        </div >
         <Worldmap />
+        <Reset/>
       </div>
     </ThemeProvider>
   );
