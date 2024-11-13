@@ -130,7 +130,7 @@ function Worldmap() {
   };
 
   return (
-    <div className="container mx-auto lg:flex mb-10 justify-between">
+    <div className="container mx-auto lg:flex mb-10 justify-between pl-10 pr-10">
       <div className="container mt-5 lg:mt-0 lg:w-1/2 md:p-5 mx-auto border rounded-2xl">
         <WorldMap
           color=""
@@ -141,13 +141,13 @@ function Worldmap() {
           data={data}
           onClickFunction={clickAction}
         />
-        <p className="font-thin pl-5 pr-5 pb-5 md:font-bold text-sm mt-5">
+        <p className="font-thin pl-5 pr-5  md:font-bold text-sm mt-5">
           "Click on a country on the map to view its population trend over
           time."
         </p>
       </div>
 
-      <div className="lg:w-1/2">
+      <div className="lg:w-1/2 ">
         {transformedData.length > 0 ? (
           <Card>
             <CardHeader>
