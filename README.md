@@ -9,7 +9,7 @@ A web application to visualize population trends of different countries.
 
 ## Screenshots
 
-![App Screenshot]()
+![App Screenshot](https://github.com/RamvigneshA/Interactive-world-graph-chart/blob/main/Web_Photo_Editor.jpg?raw=true)
 
 
 
